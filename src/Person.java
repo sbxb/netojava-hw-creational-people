@@ -20,6 +20,7 @@ public class Person {
     public boolean hasAge() {
         return age >= 0;
     }
+
     public boolean hasAddress() {
         return address != null;
     }
@@ -35,6 +36,7 @@ public class Person {
     public OptionalInt getAge() {
         return hasAge() ? OptionalInt.of(age) : OptionalInt.empty();
     }
+
     public String getAddress() {
         return address;
     }
@@ -42,6 +44,7 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
+
     public void happyBirthday() {
         if (hasAge()) {
             age++;
