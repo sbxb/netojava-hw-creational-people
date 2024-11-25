@@ -10,16 +10,19 @@ public class PersonBuilder {
         this.name = name;
         return this;
     }
+
     public PersonBuilder setSurname(String surname) {
         this.surname = surname;
         return this;
     }
+
     public PersonBuilder setAge(int age) {
         if (age < MIN_AGE || age > MAX_AGE)
             throw new IllegalArgumentException("cannot set wrong age");
         this.age = age;
         return this;
     }
+
     public PersonBuilder setAddress(String address) {
         this.address = address;
         return this;
@@ -30,10 +33,8 @@ public class PersonBuilder {
             throw new IllegalStateException("nonempty name and surname must be set for a person");
         }
 
-        if (age == -1) {
-            return new Person(name, surname);
-        } else {
-            return new Person(name, surname, age);
-        }
+        Person p = new Person(name, surname, age);
+        p.setAddress(address);
+        return p;
     }
 }
