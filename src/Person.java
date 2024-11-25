@@ -57,7 +57,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("Person{%s %s, age: %s, address: %s}",
+        return String.format("Person{name: %s, surname: %s, age: %s, address: %s}",
                 name,
                 surname,
                 hasAge() ? String.valueOf(age) : "N/A",
